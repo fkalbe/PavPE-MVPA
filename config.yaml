@@ -1,0 +1,23 @@
+rois: [insula, hippocampus]
+timepoints: ['-6', '-4', '-2', '0', '2', '4', '6']
+
+models:
+    clf_recognition:
+        label_name: laterRecognized
+        standardize_features: true
+        n_permutations: 200
+        scoring: roc_auc
+        model_class: LinearSVC
+        hyperparameters:
+            penalty: l1
+            C: 0.1
+            dual: false
+    reg_signedPE:
+        label_name: signedPE
+        standardize_features: true
+        n_permutations: 200
+        scoring: neg_mean_squared_error
+        model_class: LinearSVR
+        hyperparameters:
+            C: 0.1
+    

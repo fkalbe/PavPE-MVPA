@@ -1,0 +1,26 @@
+insula:
+    - atlas\HarvardOxford-Cortical\Insular_Cortex_L-maxprob-thr0-2mm.nii
+    - atlas\HarvardOxford-Cortical\Insular_Cortex_R-maxprob-thr0-2mm.nii
+
+hippocampus:
+    - atlas\HarvardOxford-Subcortical\Left_Hippocampus-maxprob-thr0-2mm.nii
+    - atlas\HarvardOxford-Subcortical\Right_Hippocampus-maxprob-thr0-2mm.nii
+
+parahippocampal:
+    - atlas\Montreal\roi_parahippocampal_cortex_left.nii
+    - atlas\Montreal\roi_parahippocampal_cortex_right.nii
+    
+caudate:
+    - atlas\HarvardOxford-Subcortical\Left_Caudate-maxprob-thr0-2mm.nii
+    - atlas\HarvardOxford-Subcortical\Right_Caudate-maxprob-thr0-2mm.nii
+
+putamen:
+    - atlas\HarvardOxford-Subcortical\Left_Putamen-maxprob-thr0-2mm.nii
+    - atlas\HarvardOxford-Subcortical\Right_Putamen-maxprob-thr0-2mm.nii
+
+cingulate:
+    - atlas\Montreal\roi_cingulate_left.nii
+    - atlas\Montreal\roi_cingulate_right.nii
+    
+whole_brain:
+    - atlas\brainmask_clean.nii
