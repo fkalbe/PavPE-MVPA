@@ -23,8 +23,8 @@ class MVPAMasker:
         # resample mask to ensure same affine as images
         mask_res = resample_img(self.load_mask(mask_name),
                                 target_affine=img.affine,
-                                target_shape=img.shape[:3],
-                                interpolation='nearest')
+                                target_shape=img.shape[:3],  # pylint: disable=E1101
+                                interpolation="nearest")
 
         return apply_mask(img, mask_res)
 
@@ -32,6 +32,6 @@ class MVPAMasker:
     def get_mask_defs():
         """Load YAML mask definition file and return contents as dict."""
         project_root = Path(__file__).parents[1]
-        filename = project_root / 'mask_defs.yaml'
+        filename = project_root / "mask_defs.yaml"
         with open(filename, encoding="utf-8") as file:
             return yaml.safe_load(file)
