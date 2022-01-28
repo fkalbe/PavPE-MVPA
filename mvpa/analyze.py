@@ -1,12 +1,12 @@
 """Module to perform analysis on a batch of participants."""
+import itertools
+import logging
+from pathlib import Path
 import mvpa.util
 import mvpa.single_subj
 import mvpa.model
 import mvpa.masking
 import mvpa.results
-import itertools
-import logging
-from pathlib import Path
 
 log = logging.getLogger(__name__)
 
