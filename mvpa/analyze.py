@@ -32,7 +32,7 @@ def run_analysis(config, base_dir):
 
                 for timepoint in config["timepoints"]:
                     log.info("Timepoint: %s", timepoint)
-                    score, permutation_scores, p = mvpa.model.fit_model(
+                    score, permutation_scores, p_value = mvpa.model.fit_model(
                         model,
                         masker.apply_mask(participant.propergate_missings(
                             participant.features[timepoint],
@@ -44,9 +44,9 @@ def run_analysis(config, base_dir):
                             participant.labels[model_name]),
                         model_cfg["scoring"],
                         model_cfg["n_permutations"])
-                    mvpa.results.save_results(score, permutation_scores, p,
-                                              participant.name, model_name,
-                                              roi, timepoint)
+                    mvpa.results.save_results(score, permutation_scores,
+                                              p_value, participant.name,
+                                              model_name, roi, timepoint)
 
 
 def get_participant_dirs(base_dir):
