@@ -18,20 +18,20 @@ def run_analysis(config, base_dir):
                        itertools.repeat(config))
     masker = mvpa.masking.MVPAMasker()
     for participant in participants:
-        log.info(f'Analyzing participant: {participant.name}')
+        log.info("Analyzing participant: %s", participant.name)
 
         for model_name, model_cfg in config["models"].items():
-            log.info(f'Running model: {model_name}')
+            log.info("Running model: %s", model_name)
             model = mvpa.model.construct_model(
                 estimator_name=model_cfg["model_class"],
                 hyperparameters=model_cfg["hyperparameters"],
                 standardize=model_cfg["standardize_features"])
 
             for roi in config["rois"]:
-                log.info(f'Using ROI: {roi}')
+                log.info("Using ROI: %s", roi)
 
                 for timepoint in config["timepoints"]:
-                    log.info(f'Timepoint: {timepoint}')
+                    log.info("Timepoint: %s", timepoint)
                     score, permutation_scores, p = mvpa.model.fit_model(
                         model,
                         masker.apply_mask(participant.propergate_missings(
