@@ -33,5 +33,5 @@ class MVPAMasker:
         """Load YAML mask definition file and return contents as dict."""
         project_root = Path(__file__).parents[1]
         filename = project_root / 'mask_defs.yaml'
-        with open(filename) as file:
+        with open(filename, encoding="utf-8") as file:
             return yaml.safe_load(file)
