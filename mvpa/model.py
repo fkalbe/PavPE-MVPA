@@ -51,8 +51,7 @@ def get_estimator(name):
         return LinearSVC()
     if name == "LinearSVR":
         return LinearSVR()
-    else:
-        raise ValueError(f"Option {name} is not implemented.")
+    raise ValueError(f"Option {name} is not implemented.")
 
 
 def set_hyperparameters(model, hyperparameters):
