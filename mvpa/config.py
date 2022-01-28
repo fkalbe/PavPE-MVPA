@@ -8,5 +8,5 @@ def get_config(filename=None):
     if filename is None:
         project_root = Path(__file__).parents[1]
         filename = project_root / "config.yaml"
-    with open(filename) as file:
+    with open(filename, encoding="utf-8") as file:
         return yaml.safe_load(file)
