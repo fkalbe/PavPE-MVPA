@@ -50,7 +50,7 @@ def run_analysis(config, base_dir):
 
 
 def get_participant_dirs(base_dir):
-    """Return dict with participant names and their data directories."""
+    """Return dict with participant data directories."""
     base_dir = Path(base_dir)
     return mvpa.util.convert_path_objects_to_path_strings(
         tuple(base_dir.glob("VP*")))
